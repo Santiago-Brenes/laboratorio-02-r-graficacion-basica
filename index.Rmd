@@ -63,13 +63,14 @@ summary(ca_covid19)
 3. (10%) Con la función ```barplot()```, genere un gráfico de barras de los casos confirmados.
 
 ```{r}
-
+barplot(height=ca_covid19$confirmados)
 ```
 
 4. (10%) Con la función  ```order()```, ordene el data frame por cantidad de casos confirmados y genere de nuevo el gráfico.
 
 ```{r}
-
+confirmados.order <- order(ca_covid19$confirmados, decreasing=TRUE)
+ca_covid19.confirmados <- ca_covid19[confirmados.order,]
 ```
 
 5. (10%) Incluya en el gráfico los siguientes componentes:
@@ -78,7 +79,7 @@ summary(ca_covid19)
 - Titulo del gráfico.
 
 ```{r}
-
+barplot(height = ca_covid19.confirmados$confirmados,names.arg = ca_covid19.confirmados$pais,xlab = "País", ylab = "Casos confirmados", main = "Casos confirmados de Covid-19 en paises de Centroamerica y República Dominicana")
 ```
 
 6. Genere gráficos similares al del paso anterior para:
