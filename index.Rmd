@@ -93,5 +93,7 @@ barplot(height = ca_covid19.activos$activos, names.arg = ca_covid19.activos$pais
 ```
 
 ```{r}
-
+fallecidos.order <- order(ca_covid19$fallecidos, decreasing = TRUE)
+ca_covid19.fallecidos <- ca_covid19[fallecidos.order,]
+barplot(height = ca_covid19.fallecidos$fallecidos,names.arg = ca_covid19.fallecidos$pais,xlab = "País",ylab = "Casos Fallecidos", main = "Casos Fallecidos de Covid-19 en paises de Centroamerica y República Dominicana")
 ```
